@@ -1,0 +1,55 @@
+.book-form {
+    display: none;
+}
+
+.bookshelf {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.card,
+button {
+    border-radius: 1rem;
+}
+
+.card {
+    height: 13rem;
+    width: 13rem;
+    background-color: whitesmoke;
+    padding: 2rem;
+}
+
+button {
+    background-color: beige;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(90%);
+}
+
+.bookshelf button {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.reading {
+    background-color: blue;
+}
+
+.planToRead {
+    background-color: red;
+}
+
+.completed {
+    background-color: green;
+}
+
+.remove {
+    background-color: gray;
+}
