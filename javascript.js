@@ -11,12 +11,13 @@ const bookPages = document.getElementById('pages');
 const bookStatus = document.getElementById('status');
 const bookshelf = document.querySelector('.bookshelf');
 
-// Constructor
-function Book(title, author, pages, status) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.status = status;
+class Book {
+    constructor(title, author, pages, status) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.status = status;
+    }
 }
 
 // Function that takes the user's input and stores the new book objects into an array (myLibrary)
