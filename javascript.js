@@ -42,9 +42,7 @@ function displayBooks() {
     for(let i = 0; i < myLibrary.length; i++) {
         // Card
         const card = document.createElement('div');
-        const cardInfo = document.createElement('div');
         card.classList.add('card');
-        cardInfo.classList.add('card-info');
 
         // Card Info (not buttons)
         const cardTitle = document.createElement('p');
@@ -55,7 +53,7 @@ function displayBooks() {
         cardAuthor.textContent = myLibrary[i]['author'];
         cardPages.textContent = `${myLibrary[i]['pages']} pages`;
 
-        cardTitle.classList.add('card-title');
+        cardTitle.id = 'card-title';
 
         // Card Status Button
         const cardButtonDiv = document.createElement('div');
@@ -85,10 +83,9 @@ function displayBooks() {
 
         // Add the card to bookshelf, add the card content to the card
         bookshelf.appendChild(card);
-        card.appendChild(cardInfo);
-        cardInfo.appendChild(cardTitle);
-        cardInfo.appendChild(cardAuthor);
-        cardInfo.appendChild(cardPages);
+        card.appendChild(cardTitle);
+        card.appendChild(cardAuthor);
+        card.appendChild(cardPages);
         card.appendChild(cardButtonDiv);
         cardButtonDiv.appendChild(cardStatusButton);
         cardButtonDiv.appendChild(cardRemoveButton);
@@ -135,6 +132,7 @@ function openForm() {
 function closeForm() {
     bookForm.style.display = 'none';
     bookFormOverlay.style.display = 'none';
+    clearForm();
 }
 
 function clearForm() {
@@ -145,8 +143,8 @@ function clearForm() {
 }
 
 // TESTING
-const test = new Book('Title', 'Author', '#', completed);
-const book1 = new Book('The Subtle Art of Not Giving a F*ck', 'Mark Manson', '272', planToRead);
-const book2 = new Book('How to Win Friends and Influence People', 'Dale Carnegie', '291', reading);
-myLibrary.push(test, book1, book2);
+const test1 = new Book('When Heaven and Earth Changed Places', 'Le Ly Hayslip, Jay Wurts', '464', completed);
+const test2 = new Book('Before the Coffee Gets Cold', 'Toshikazu Kawaguchi', '272', reading);
+const test3 = new Book('Yellow Face', 'R. F. Kuang', '336', planToRead);
+myLibrary.push(test1, test2, test3);
 displayBooks();
