@@ -41,7 +41,9 @@ function displayBooks() {
     for(let i = 0; i < myLibrary.length; i++) {
         // Card
         const card = document.createElement('div');
+        const cardInfo = document.createElement('div');
         card.classList.add('card');
+        cardInfo.classList.add('card-info');
 
         // Card Info (not buttons)
         const cardTitle = document.createElement('p');
@@ -53,6 +55,8 @@ function displayBooks() {
         cardPages.textContent = `${myLibrary[i]['pages']} pages`;
 
         // Card Status Button
+        const cardButtonDiv = document.createElement('div');
+        cardButtonDiv.classList.add('card-button-div');
         const cardStatusButton = document.createElement('button');
         cardStatusButton.textContent = myLibrary[i]['status'];
         cardStatusButton.type = 'button';
@@ -78,18 +82,20 @@ function displayBooks() {
 
         // Add the card to bookshelf, add the card content to the card
         bookshelf.appendChild(card);
-        card.appendChild(cardTitle);
-        card.appendChild(cardAuthor);
-        card.appendChild(cardPages);
-        card.appendChild(cardStatusButton);
-        card.appendChild(cardRemoveButton);
+        card.appendChild(cardInfo);
+        cardInfo.appendChild(cardTitle);
+        cardInfo.appendChild(cardAuthor);
+        cardInfo.appendChild(cardPages);
+        card.appendChild(cardButtonDiv);
+        cardButtonDiv.appendChild(cardStatusButton);
+        cardButtonDiv.appendChild(cardRemoveButton);
     }
 }
 
 // On button click, change it to the next select option; re-display the bookshelf
 function changeReadingStatus() {
     // get the index of the card
-    const cardIndex = parseInt(this.parentElement.dataset.index);
+    const cardIndex = parseInt(this.parentElement.parentElement.dataset.index);
 
     // Reading -> Plan to Read -> Completed
     if (this.textContent === reading) {
@@ -105,7 +111,7 @@ function changeReadingStatus() {
 
 // On button click, remove the card from the array; re-display the bookshelf
 function removeCard() {
-    const cardIndex = parseInt(this.parentElement.dataset.index);
+    const cardIndex = parseInt(this.parentElement.parentElement.dataset.index);
 
     myLibrary.splice(cardIndex, 1);
 

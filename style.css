@@ -1,7 +1,46 @@
-.book-form {
-    display: none;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
+:root {
+    --dark-navy-color: #0b1622;
+    --navy-color: #151f2e;
+    --header-text-color: white;
+    --book-text-color: #92a0b0;
+    --blue-color: #3db4f2;
+    --red-color: #ec294b;
+    --green-color: #68d639;
+    --purple-gray-color: #898aa0;
+}
+
+body {
+    background-color: var(--dark-navy-color);
+    padding: 3rem;
+}
+
+/* Library Name, h1 */
+.library-name {
+    display: flex;
+}
+
+h1 {
+    font-weight: 900;
+}
+
+.h1-lib {
+    color: var(--header-text-color);
+}
+
+.h1-list {
+    color: var(--blue-color);
+}
+
+/* Bookshelf */
 .bookshelf {
     display: flex;
     flex-flow: row wrap;
@@ -9,47 +48,66 @@
     padding: 2rem;
 }
 
+/* Cards */
 .card,
 button {
     border-radius: 1rem;
 }
 
 .card {
-    height: 13rem;
-    width: 13rem;
-    background-color: whitesmoke;
+    height: auto;
+    width: 15rem;
+    background-color: var(--navy-color);
     padding: 2rem;
 }
 
+.card-info {
+    color: var(--book-text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+/* Buttons */
 button {
-    background-color: beige;
+    font-size: 0.9rem;
+    color: var(--header-text-color);
     border: none;
+    border-radius: 0.25rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
 }
 
-button:hover {
-    filter: brightness(90%);
-}
-
-.bookshelf button {
+.card-button-div {
+    padding: 1rem 0rem;
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
+    gap: 1rem;
 }
 
+.new-book-button,
 .reading {
-    background-color: blue;
+    background-color: var(--blue-color);
 }
 
 .planToRead {
-    background-color: red;
+    background-color: var(--red-color);
 }
 
 .completed {
-    background-color: green;
+    background-color: var(--green-color);
 }
 
 .remove {
-    background-color: gray;
+    background-color: var(--purple-gray-color);
 }
+
+/* Book Form */
+.book-form {
+    background-color: var(--navy-color);
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
