@@ -4,6 +4,7 @@ const reading = 'Reading';
 const planToRead = 'Plan to Read';
 const completed = 'Completed';
 
+const bookFormOverlay = document.querySelector('.form-overlay-bg');
 const bookForm = document.querySelector('.book-form');
 const bookTitle = document.getElementById('title');
 const bookAuthor = document.getElementById('author');
@@ -53,6 +54,8 @@ function displayBooks() {
         cardTitle.textContent = myLibrary[i]['title'];
         cardAuthor.textContent = myLibrary[i]['author'];
         cardPages.textContent = `${myLibrary[i]['pages']} pages`;
+
+        cardTitle.classList.add('card-title');
 
         // Card Status Button
         const cardButtonDiv = document.createElement('div');
@@ -126,10 +129,12 @@ function clearBookShelf() {
 // Form Functions (open, close, clear)
 function openForm() {
     bookForm.style.display = 'block';
+    bookFormOverlay.style.display = 'block';
 }
 
 function closeForm() {
     bookForm.style.display = 'none';
+    bookFormOverlay.style.display = 'none';
 }
 
 function clearForm() {
@@ -140,7 +145,8 @@ function clearForm() {
 }
 
 // TESTING
-const theHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', '295', planToRead);
-const pog = new Book('Pog Book', 'Pog Author', '69', reading);
-myLibrary.push(theHobbit, pog);
+const test = new Book('Title', 'Author', '#', completed);
+const book1 = new Book('The Subtle Art of Not Giving a F*ck', 'Mark Manson', '272', planToRead);
+const book2 = new Book('How to Win Friends and Influence People', 'Dale Carnegie', '291', reading);
+myLibrary.push(test, book1, book2);
 displayBooks();
