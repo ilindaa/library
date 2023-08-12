@@ -12,13 +12,13 @@
     <div class="library-name"><h1 class="h1-lib">Lib</h1><h1 class="h1-list">List</h1></div>
 
     <!-- Opens the form -->
-    <button type="button" onclick="openForm()" class="new-book-button">+ New Book</button>
+    <button type="button" onclick="openForm()" class="new-book-btn">+ New Book</button>
 
     <!-- Form -->
     <div class="form-align">
         <form class="book-form" onsubmit="event.preventDefault(); addBookToLibrary();">
             <h3 class="book-form-title">Book Form</h3>
-            <button type="button" onclick="closeForm()" class="form-close-button">Close</button>
+            <button type="button" onclick="closeForm()" class="form-close-btn">Close</button>
             <div class="form-content">
                 <div class="form-row">
                     <div class="form-item">
@@ -46,7 +46,7 @@
                     </div>
             </div>
             </div>
-            <button type="submit" class="submit-button">Submit</button>
+            <button type="submit" class="submit-btn">Submit</button>
         </form>
     </div>
 
@@ -54,5 +54,6 @@
 
     <!-- Display Books Here -->
     <div class="bookshelf"></div>
+    <button type="button" class="local-storage-btn" onclick="clearLocalStorage()">Clear Local Storage</button>
 </body>
 </html>

@@ -91,7 +91,7 @@ button:hover {
     filter: brightness(0.9);
 }
 
-.card-button-div {
+.card-btn-div {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -125,7 +125,7 @@ button:hover {
     box-shadow: 0px 3px 15px #00000033;
 }
 
-.form-close-button {
+.form-close-btn {
     position: absolute;
     margin: 2rem;
     z-index: 2;
@@ -167,6 +167,14 @@ select {
     border-radius: 0.25rem;
 }
 
+.local-storage-btn {
+    background-color: var(--blue-gray-color);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 3rem;
+}
+
 /* Grouped Colors */
 .card,
 .book-form {
@@ -185,14 +193,14 @@ label {
     color: var(--blue-gray-color);
 }
 
-.new-book-button,
+.new-book-btn,
 .reading,
-.submit-button {
+.submit-btn {
     background-color: var(--blue-color);
 }
 
 .planToRead, 
-.form-close-button {
+.form-close-btn {
     background-color: var(--red-color);
 }
 
